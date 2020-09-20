@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Project__25M_.Admin" %>
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<%--    <title><%: Page.Title %> - My ASP.NET Application</title>--%>
+
+   <%-- <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>--%>
+    <style>
+        li {
+            padding:20px;
+        }
+        body{
+            background-image: url(/Images/16.jpg);
+            background-size: cover;
+        }
+    </style>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <asp:Menu ID="Menu1" runat="server" BackColor="#CCFFFF" Font-Names="Verdana" CssClass="fixed-top" Height="70px" Font-Size="Medium" orientation="Horizontal" ForeColor="#CC6600">
+           <%-- <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+            <DynamicMenuItemStyle HorizontalPadding="50px" VerticalPadding="50px" />
+            <DynamicMenuStyle BackColor="#F7F6F3" />
+            <DynamicSelectedStyle BackColor="#5D7B9D" />--%>
+            <Items>                
+                <asp:MenuItem Text="New Arrival" Value="New Arrival" NavigateUrl="~/Admin_New_Arrival.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Product Status" Value="Product Status" NavigateUrl="~/Admin_Product_Status.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Weekly Suggestion" Value="Store" NavigateUrl="~/Admin_Weekly_Sugg.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Student Managment" Value="E-learing" NavigateUrl="~/Admin_Stu_Man.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Library Management" Value="Weekly Suggestions" NavigateUrl="~/Admin_Lib_Man.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Logout" Value="Logout" NavigateUrl="~/Admin_Logout.aspx"></asp:MenuItem>
+            </Items>
+            <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <StaticSelectedStyle BackColor="#5D7B9D" />
+        </asp:Menu>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <%--<footer>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </footer>--%>
+        </div>
+
+    </form>
+</body>
+</html> 
+
